@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:InteractiveApp.ViewModels"
+             xmlns:paz="clr-namespace:InteractiveApp.Controls"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="InteractiveApp.Views.StartingScreenView"
+             x:DataType="vm:StartingScreenViewModel">
+
+    <Grid Background="Black" ColumnDefinitions="*" RowDefinitions="40,*">
+        <!-- Top Bar -->
+        <Grid Background="#6200EE" ColumnDefinitions="150,*,100" RowDefinitions="*">
+            <TextBlock Grid.Column="0" Text="NihonStroke" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" />
+            <Button Grid.Column="2" Width="30" Height="30" HorizontalAlignment="Right" Margin="0,0,10,0" Background="White" Command="{Binding StartingViewClickCommand}" />
+        </Grid>
+
+        <!-- Content -->
+        <Grid ColumnDefinitions="*" RowDefinitions="*">
+        </Grid>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:InteractiveApp.ViewModels"
+             xmlns:paz="clr-namespace:InteractiveApp.Controls"
+             x:Class="InteractiveApp.Views.DrawingView"
+             x:DataType="vm:DrawingViewModel">
+
+  <Grid Background="Black" ColumnDefinitions="*" RowDefinitions="40,*">
+    <!-- Top Bar -->
+    <Grid Background="#6200EE" ColumnDefinitions="150,*,100" RowDefinitions="*">
+        <Button Grid.Column="0" Width="30" Height="30" HorizontalAlignment="Left" Margin="10,0,0,0" Background="White" Command="{Binding DrawingViewClickCommand}" />
+    </Grid>
+
+    <!-- Content -->
+    <Panel Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+      <!-- DEBUG DISPLAY -->
+      <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" ZIndex="5">
+        <TextBlock Text="{Binding DataModelInstance.DebugValue}" FontSize="18" Foreground="Red" Width="500" Height="500"/>
+      </StackPanel>
+      <paz:InteractiveCanvas Name="_interactiveCanvas" Background="DarkGray" ClipToBounds="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ZIndex="0" />
+    </Panel>
+  </Grid>
+
+</UserControl>
